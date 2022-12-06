@@ -1,0 +1,126 @@
+/*Обнуление*/
+*{padding: 0;margin: 0;border: 0; }
+
+body{
+   background-color: black;
+   overflow: hidden;/*запрет на появл скролла*/
+}
+/*обработка картинки в media*/
+#curtain{
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   object-position:top;
+   object-fit: fill;
+   /*object-fit: cover;*/
+   background-position: bottom;
+   transition: bottom 1s linear;/*поднятие низа занавеса плавно-линейно в течение 1 секунды*/
+   z-index: 3; 
+   margin-top: -10vh;
+}
+
+.all{
+   display: flex;
+   position: flex;
+   flex-direction: column;
+   justify-content: center;
+   margin-top: 10vh;
+   margin-left: 40vw;
+   width: 20%;
+}
+#lamp{
+   z-index: 2;
+}
+
+#switch_{
+   transition: top 0.1s;/*поднятие- опускание выключателя в теч 0.1с*/
+   min-height: 5vh;
+   height: 15.5vh;
+   z-index: 1;
+   transform: translate(-23%, 10px);
+   position: fixed;
+   left: 47%;
+   right: -55vw;
+   top: 11.8vh;
+   bottom: 90vh;
+   width: auto;
+}
+#triangle{
+   z-index: 1;
+   margin-left: 50%;
+   margin-top: -15%;
+   transform: translate(-50%, -40%);
+   border: 47vh solid transparent; 
+   border-bottom: 75vh solid yellow;
+   transition: opacity 0.8s;
+   transition: center 0.2s linear;
+}
+.of_light{
+   opacity: 0;
+}
+
+.on_light{
+   opacity: 0.5;
+}
+.inside{
+   margin-left: 33%;
+}
+.magician{
+   position:absolute;
+   max-width: 23.5%;
+   transition: opacity 0.2s;
+   top:54vh;
+   z-index: -1;
+   opacity: 0;
+}
+.hat{
+   position:absolute;
+   top:70vh;
+   margin-left:22vw;
+   max-width: 11%;
+   transition: opacity 0.5s;
+   z-index: -1;
+   opacity: 0;
+}
+
+.rabbit{
+   position:fixed;
+   margin-left:25vw;
+   width: 5vw;
+   bottom: 32vh;
+   z-index: 1;
+   background-color:rgba(yellow, 0, 0, 0.5) ;
+   transition: opacity 0.8s, bottom 0.5s;
+   opacity: 0;
+}
+
+.bird{
+   position:fixed;
+   margin-left:25vw;
+   width: 5vw;
+   bottom: 22vh;
+   z-index: 1;
+   background-color:rgba(yellow, 0, 0, 0.5) ;
+   transition: opacity 0.8s, bottom 0.5s;
+   opacity: 0;
+}
+/*при горизонтальной ориентации, когда сжимаем окно браузера*/
+@media (orientation: landscape) and (max-width: 1000px ){
+
+   #curtain{
+   min-height: 100vh;
+   width: 100%;
+   object-fit: cover; /*масштабируемость изображения, обрезка по бокам*/ 
+   object-position:bottom;
+   bottom: 0%;/*Независимо от размера экрана, нижняя часть занавеса всегда должна быть внизу страницы.*/
+   }
+
+}
+/*при вертикальной ориентации, обрезаем бока изображения */
+@media (orientation: portrait) and (width: 500px ){
+   #curtain{
+    
+      min-height: 100%;
+      object-fit: cover;
+   }
+}

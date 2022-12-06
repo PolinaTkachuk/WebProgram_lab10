@@ -1,0 +1,32 @@
+<!-- Сообщаем браузеру как стоит обрабатывать эту страницу -->
+<!DOCTYPE html>
+<!-- Оболочка документа, указываем язык содержимого -->
+<html lang="ru">
+	
+	<head>
+		<title>lab10</title>
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+	    <link rel="stylesheet" href="css/style_lab10.css" />
+	</head>
+	
+	<body>
+
+    <img src="img/1.jpg" id="curtain" alt="curtain" onclick="animate_()" onmouseover="animate_()" onmouseout="animate_()"  >
+	<div class="all">
+			<!--onmouseup срабатывает в момент нажатия на кнопку мыши
+		onmousedown срабатывает в момент когда отпускаем нажатие на мышку-->
+		<img src="img/lampTop.png" id="lamp" class ="lamp" alt="lamp" onclick="UpDownlamp_()" onmouseup ="SwitchDown()" onmousedown="SwitchUp()" >
+		<img src="img/lampDown.png" id="lampDown"  class ="lamp" alt="lamp" >
+	</div>
+		<img src="img/switch.png" id="switch_" alt="lamp switch" onmouseout="animate_()"  >
+		<div id="triangle" class="of_light" ></div>
+		<div class="inside">
+			<img src="img/magician.jpg" alt="magician" class="magician" id="magician">
+	        <img src="img/hat.png" alt="hat" class="hat" id="hat">
+			<img src="img/rabbit.png" alt="rabbit" class="rabbit" id="rabbit" onclick="DownRabbit()">
+			<img src="img/bird.png" alt="bird" class="bird" id="bird" onclick="DownBird()">
+		</div>
+	</div>
+  </body>
+  <script src="js/scriptJS_lab10.js"></script>
+</html>
